@@ -1,0 +1,9 @@
+.vscode
+.idea
+dist/
+build/
+pyspack.egg-info
+*/dist
+*/build
+*/pyspack.egg-info
+*__pycache__
