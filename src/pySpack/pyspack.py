@@ -85,3 +85,9 @@ class PySpack:
         if self.find(package_name):
             return False
         return True
+
+    def load(self, package_name) -> str:
+        load_output = exec_cmd(self.SPACK_BIN, ['load', '--sh', package_name])
+        if load_output.stderr:
+            print(load_output.stderr.decode('utf-8'))
+        return load_output.stdout.decode('utf-8')

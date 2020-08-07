@@ -1,2 +1,5 @@
+# 0.2
+- Add `spack load` function
+
 # 0.1
 - Initial release
