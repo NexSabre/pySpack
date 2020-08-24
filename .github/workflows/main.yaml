@@ -20,7 +20,7 @@ jobs:
         git clone https://github.com/spack/spack
         export SPACK_ROOT=$(PWD)/spack
       env:
-        - SPACK_ROOT: "$PWD/spack"
+        - SPACK_ROOT: "$(PWD)/spack"
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
