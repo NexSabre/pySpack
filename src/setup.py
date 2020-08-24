@@ -17,8 +17,11 @@ setuptools.setup(
     url="https://github.com/NexSabre/pySpack",
     packages=setuptools.find_packages(),
     classifiers=[
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: MIT License",
     ],
-    python_requires='>=3.7',
+    python_requires='>=3.5',
 )
