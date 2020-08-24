@@ -17,8 +17,8 @@ jobs:
     - name: Get Spack
       run: |
         git clone https://github.com/spack/spack
-        export SPACK_ROOT=spack
-        echo $SPACK_ROOT
+      env:
+        - SPACK_ROOT: "/home/runner/work/pySpack/spack"
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -26,6 +26,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
+        export SPACK_ROOT=/home/runner/work/pySpack/spack
         cd src && python -m unittest discover pySpack
     - name: Build a wheel package
       run: |
