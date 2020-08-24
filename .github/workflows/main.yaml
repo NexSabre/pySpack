@@ -17,7 +17,7 @@ jobs:
     - name: Get Spack
       run: |
         echo $pwd
-        ll
+        echo ls
         git clone https://github.com/spack/spack
     - name: Install dependencies
       run: |
