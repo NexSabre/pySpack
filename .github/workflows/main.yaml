@@ -16,8 +16,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Get Spack
       run: |
-        echo $pwd
-        echo $ls
+        echo $(pwd)
+        echo $(ls)
         git clone https://github.com/spack/spack
     - name: Install dependencies
       run: |
