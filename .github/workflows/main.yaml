@@ -18,7 +18,7 @@ jobs:
     - name: Get Spack
       run: |
         git clone https://github.com/spack/spack
-        export SPACK_ROOT=$PWD/spack
+        export SPACK_ROOT=$(PWD)/spack
       env:
         - SPACK_ROOT: "$PWD/spack"
     - name: Install dependencies
