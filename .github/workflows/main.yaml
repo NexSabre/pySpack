@@ -16,7 +16,10 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - uses: spack/spack
     - name: Get Spack
-    - env:
+      run: |
+        git clone https://github.com/spack/spack
+        export SPACK_ROOT=$PWD/spack
+      env:
         - SPACK_ROOT: "$PWD/spack"
     - name: Install dependencies
       run: |
