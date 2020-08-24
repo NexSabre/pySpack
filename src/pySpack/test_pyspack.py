@@ -28,7 +28,8 @@ class Test_TestPySpack(unittest.TestCase):
     def test_load(self):
         self.pyspack.install('py-json5')
         load_output = self.pyspack.load('py-json5')
-        self.assertTrue(self.find_python_path(load_output, 'py-json5'), "py-json5 should be available at PYTHONPATH string returned by the Spack")
+        self.assertTrue(self.find_python_path(load_output, 'py-json5'),
+                        "py-json5 should be available at PYTHONPATH string returned by the Spack")
 
     def test_negative_load(self):
         package_which_not_exists = 'py-random-package-which-does-not-exists'
