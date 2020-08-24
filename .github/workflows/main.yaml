@@ -17,9 +17,9 @@ jobs:
     - name: Get Spack
       working-directory: ${{ github.workspace }}
       run: |
+        git clone https://github.com/spack/spack
         pwd
         ls -la
-        git clone https://github.com/spack/spack
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -27,7 +27,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        export SPACK_ROOT=/home/runner/work/spack
+        export SPACK_ROOT=/home/runner/work/pySpack/pySpack/spack
         cd src && python -m unittest discover pySpack
     - name: Build a wheel package
       run: |
