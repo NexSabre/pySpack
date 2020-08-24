@@ -18,7 +18,6 @@ jobs:
       working-directory: ${{ github.workspace }}
       run: |
         git clone https://github.com/spack/spack
-        export SPACK_ROOT=/home/runner/work/pySpack/pySpack/spack
         ./spack/bin/spack install py-json5
     - name: Install dependencies
       run: |
@@ -27,6 +26,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
+        export SPACK_ROOT=/home/runner/work/pySpack/pySpack/spack
         cd src && python -m unittest discover pySpack
     - name: Build a wheel package
       run: |
