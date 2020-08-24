@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: [3.5, 3.6, 3.7, 3.8]
 
     steps:
     - uses: actions/checkout@v2
@@ -18,8 +18,9 @@ jobs:
       working-directory: ${{ github.workspace }}
       run: |
         git clone https://github.com/spack/spack
-        pwd
-        ls -la
+        export SPACK_ROOT=/home/runner/work/pySpack/pySpack/spack
+        alias spack="/home/runner/work/pySpack/pySpack/spack/bin/spack"
+        spack install py-json5
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -27,7 +28,6 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        export SPACK_ROOT=/home/runner/work/pySpack/pySpack/spack
         cd src && python -m unittest discover pySpack
     - name: Build a wheel package
       run: |
