@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
+        python-version: [3.8]
 
     steps:
     - uses: actions/checkout@v2
@@ -19,8 +19,7 @@ jobs:
       run: |
         git clone https://github.com/spack/spack
         export SPACK_ROOT=/home/runner/work/pySpack/pySpack/spack
-        alias spack="/home/runner/work/pySpack/pySpack/spack/bin/spack"
-        spack install py-json5
+        ./home/runner/work/pySpack/pySpack/spack/bin/spack install py-json5
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
