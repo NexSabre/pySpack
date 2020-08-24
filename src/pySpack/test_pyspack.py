@@ -1,5 +1,4 @@
 import unittest
-from build.lib.pySpack import pyspack
 
 from pySpack.pyspack import PySpack
 
