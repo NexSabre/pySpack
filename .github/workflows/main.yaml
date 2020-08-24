@@ -1,5 +1,5 @@
 name: Test
-on: master
+on: [master]
 jobs:
   build:
 
