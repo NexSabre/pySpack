@@ -17,6 +17,7 @@ jobs:
     - name: Get Spack
       working-directory: ${{ github.workspace }}
       run: |
+        pwd
         ls -la
         git clone https://github.com/spack/spack
     - name: Install dependencies
